@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_all/catergory/categoryOne.dart';
+import 'package:flutter_all/catergory/categoryTwo.dart';
 
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
@@ -8,26 +9,32 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
+  List tabs = [
+    CategoryOne(),
+    CategoryTwo()
+  ].toList();
+  var selectController;
+  var selectIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DefaultTabController(
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(
+                text: "第一项",
+              ),
+              Tab(
+                text: "第二项",
+              )
+            ],
+          ),
           title: Text("分类"),
         ),
-        body: Container(
-          height: 200,
-          child: Swiper(
-            itemBuilder: (BuildContext context, int index) {
-              return new Image.network(
-                "http://via.placeholder.com/350x150",
-                fit: BoxFit.fill,
-              );
-            },
-            itemCount: 3,
-            pagination: new SwiperPagination(),
-            // control: new SwiperControl(),
-          ),
+        body: TabBarView(
+          children: tabs,
         ),
       ),
     );

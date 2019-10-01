@@ -53,7 +53,41 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-          )
+          ),
+          Card(
+            shape: BeveledRectangleBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid),),// 顶端斜角
+            child: ListTile(
+              title: Text("Card Shape = BeveledRectangleBorder"),
+              subtitle: Text("BeveledRectangleBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid)"),
+            ),
+          ),
+          Card(
+            shape: CircleBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid)),// 圆型
+            child: ListTile(
+              title: Text("Card Shape = CircleBorder"),
+              subtitle: Text("CircleBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid))"),
+            ),
+          ),
+          Card(
+            color: Colors.red,
+            shape: RoundedRectangleBorder(side: 
+            BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid),
+            borderRadius: BorderRadius.all(Radius.circular(10))
+            ),// 圆型
+            child: ListTile(
+              title: Text("顶端圆角 Card Shape = RoundedRectangleBorder"),
+              subtitle: Text("CircleBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid))"),
+            ),
+          ),
+          Card(
+            color: Colors.red,
+            shape: StadiumBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid),
+            ),// 圆型
+            child: ListTile(
+              title: Text("体育场型 Card Shape = StadiumBorder"),
+              subtitle: Text("StadiumBorder(side: BorderSide(width: 1.0, color: Colors.purple, style: BorderStyle.solid)"),
+            ),
+          ),
         ],
       ),
     ));
