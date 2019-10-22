@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_all/router/router.dart';
 import 'package:flutter_all/setting/customNavBar.dart';
 import 'package:flutter_all/setting/input.dart';
-import './input.dart';
+import 'package:flutter_all/setting/requestHttp.dart';
 class SettingPage extends StatefulWidget {
   SettingPage(){
     print("Hello world");
@@ -35,7 +35,13 @@ class _SettingPageState extends State<SettingPage> {
                onTap: (){
                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => InputPage()));
                },
-             )
+             ),
+             ListTile(
+               title: Text('网络请求'),
+               onTap: (){
+                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => RequestHttpPage()));
+               },
+             ),
            ],
          ),
        ),
