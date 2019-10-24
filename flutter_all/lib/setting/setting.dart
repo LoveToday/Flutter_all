@@ -25,9 +25,9 @@ class _SettingPageState extends State<SettingPage> {
              ListTile(
                title: Text('自定义导航'),
                onTap: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => CustomNavBar(arguments: {"id": 12334},)));
+                 //Navigator.push(context, MaterialPageRoute(builder: (context) => CustomNavBar(arguments: {"id": 12334},)));
                 //  Navigator.of(context).pushNamed("/setting/customNavBar");
-                //  Navigator.pushNamed(context, "/setting/customNavBar");
+                  Navigator.pushNamed(context, "/setting/customNavBar", arguments: {"id": 1234567654321234});
                },
              ),
              ListTile(
